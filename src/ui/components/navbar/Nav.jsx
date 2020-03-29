@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const NavStyles = styled.ul`
   margin: 0;
@@ -7,8 +8,8 @@ const NavStyles = styled.ul`
   display: flex;
   justify-self: center;
   font-size: 2rem;
-  a,
-  button {
+  a {
+    text-decoration: none;
     padding: 1rem 3rem;
     display: flex;
     align-items: center;
@@ -56,8 +57,8 @@ const NavStyles = styled.ul`
 
 const Nav = () => (
   <NavStyles>
-    <a>Inicio</a>
-    <a>Portafolio</a>
+    <Link to="/inicio">Inicio</Link>
+    <Link to="/inicio/portafolio">Portafolio</Link>
   </NavStyles>
 );
 
