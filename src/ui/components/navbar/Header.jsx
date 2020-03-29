@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { ThemeProvider } from "styled-components";
+import React, { useRef } from "react";
+import styled from "styled-components";
 import Nav from "./Nav";
 
 const Logo = styled.h1`
@@ -20,9 +20,9 @@ const Logo = styled.h1`
 `;
 
 const StyledHeader = styled.header`
-  position: fixed;
   width: 100%;
   z-index: 9;
+  background: ${props => props.theme.white};
   .bar {
     display: flex;
     justify-content: center;
@@ -39,32 +39,39 @@ const StyledHeader = styled.header`
     grid-template-columns: 1fr auto;
     border-bottom: 1px solid ${props => props.theme.lightgrey};
   }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: ${props => props.theme.white};
+  }
 `;
 
-const theme = {
-  white: "#fff",
-  red: "#FF0000",
-  black: "#393939",
-  grey: "#3A3A3A",
-  lightgrey: "#E1E1E1",
-  offWhite: "#EDEDED",
-  maxWidth: "1000px",
-  bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
-};
+function handleStickyChange(subBarRef) {
+  if (window.pageYOffset >= 110) {
+    subBarRef.current.classList.add("sticky");
+  } else {
+    subBarRef.current.classList.remove("sticky");
+  }
+}
 
-const Header = () => (
-  <ThemeProvider theme={theme}>
+const Header = () => {
+  const subBarRef = useRef(null);
+  window.onscroll = function() {
+    handleStickyChange(subBarRef);
+  };
+  return (
     <StyledHeader>
       <div className="bar">
         <Logo>
           <a>Padawan Dev</a>
         </Logo>
       </div>
-      <div className="sub-bar">
+      <div className="sub-bar" ref={subBarRef}>
         <Nav />
       </div>
     </StyledHeader>
-  </ThemeProvider>
-);
+  );
+};
 
 export default Header;
