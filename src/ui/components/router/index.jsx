@@ -21,7 +21,7 @@ export default props => {
       <Switch>
         <ThemeProvider theme={theme}>
           <Header />
-          <Route exact path="/inicio">
+          <Route exact path="/">
             <Home />
           </Route>
         </ThemeProvider>

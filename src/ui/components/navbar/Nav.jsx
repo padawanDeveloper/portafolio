@@ -57,8 +57,8 @@ const NavStyles = styled.ul`
 
 const Nav = () => (
   <NavStyles>
-    <Link to="/inicio">Inicio</Link>
-    <Link to="/inicio/portafolio">Portafolio</Link>
+    <Link to="/">Inicio</Link>
+    <Link to="/portafolio">Portafolio</Link>
   </NavStyles>
 );
 
