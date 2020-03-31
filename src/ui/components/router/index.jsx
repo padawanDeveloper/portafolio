@@ -14,6 +14,7 @@ const theme = {
   maxWidth: "1000px",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)"
 };
+
 export default props => {
   console.log(props);
   return (

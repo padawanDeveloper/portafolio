@@ -15,12 +15,12 @@ const NavStyles = styled.ul`
     align-items: center;
     position: relative;
     text-transform: uppercase;
-    font-size: 1em;
+    font-size: 0.8rem;
     background: none;
     border: 0;
     cursor: pointer;
     color: ${props => props.theme.black};
-    font-weight: bold;
+    font-weight: 500;
     @media (max-width: 700px) {
       display: none;
     }
@@ -34,7 +34,7 @@ const NavStyles = styled.ul`
       transition: width 0.4s;
       transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
       left: 50%;
-      margin-top: 2rem;
+      margin-top: 10px;
       @media (max-width: 700px) {
         background: none;
       }

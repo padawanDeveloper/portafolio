@@ -43,7 +43,10 @@ const StyledHeader = styled.header`
     position: fixed;
     top: 0;
     width: 100%;
-    background: ${props => props.theme.white};
+    background: ${props => props.theme.grey};
+    a {
+      color: ${props => props.theme.white};
+    }
   }
 `;
 
@@ -57,14 +60,14 @@ function handleStickyChange(subBarRef) {
 
 const Header = () => {
   const subBarRef = useRef(null);
-  window.onscroll = function() {
-    handleStickyChange(subBarRef);
-  };
+  // window.onscroll = function() {
+  //   handleStickyChange(subBarRef);
+  // };
   return (
     <StyledHeader>
       <div className="bar">
         <Logo>
-          <a>Padawan Dev</a>
+          <a>Esteban Ortiz</a>
         </Logo>
       </div>
       <div className="sub-bar" ref={subBarRef}>
