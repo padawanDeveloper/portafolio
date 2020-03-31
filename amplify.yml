@@ -7,8 +7,6 @@ frontend:
     build:
       commands:
         - yarn run build
-        - "# Execute Amplify CLI with the helper script"
-        - amplifyPushFyz
   artifacts:
     baseDirectory: build
     files:
