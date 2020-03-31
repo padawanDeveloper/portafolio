@@ -1,6 +1,6 @@
 ## This project was bootstrapped with Create React App
 
-## Shoping Cart
+## Shopping Cart
 
 - Styled component
 - Redux
