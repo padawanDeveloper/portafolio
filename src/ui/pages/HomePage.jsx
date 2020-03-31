@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ShoppingCart from "../components/shoppingCart";
 
 const ContainerStyle = styled.div`
   flex: 1;
@@ -17,7 +18,7 @@ function HomePage() {
   return (
     <ContainerStyle>
       <div className="center-text">
-        <h1>Pagina Inicio</h1>
+        <ShoppingCart />
       </div>
     </ContainerStyle>
   );
